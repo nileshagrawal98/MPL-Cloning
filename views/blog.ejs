@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/blog_style.css" type='text/css'>
+    <title>Home | Mpl Blog</title>
+</head>
+
+<body>
+
+    <div>
+
+        <div id="top_info_bar">
+            <div class="container">
+                <ul>
+                    <li id="todays_date">Sunday, October 31, 2021</li>
+                    <li id="login_option"><span id="login_btn">Sign in</span> / <span id="join_btn">Join</span></li>
+                    <li id="nav_user">
+                        <span id="logged_username"></span>
+                    </li>
+                    <li class="res-hide">Disclaimer</li>
+                    <li class="res-hide">Privacy</li>
+                    <li class="res-hide">Advertisement</li>
+                    <li class="res-hide">Contact us</li>
+                </ul>
+                <ul>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                            viewBox="0 0 24 24" style="fill:#ffffff;">
+                            <path
+                                d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2 C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                            viewBox="0 0 24 24" style=" fill:#ffffff;">
+                            <path
+                                d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                            viewBox="0 0 30 30" style=" fill:#ffffff;">
+                            <path
+                                d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z">
+                            </path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                            viewBox="0 0 48 48" style=" fill:#ffffff;">
+                            <path
+                                d="M 23.857422 8.5 C 17.504717 8.5 11.602344 8.9526234 8.234375 9.65625 A 1.50015 1.50015 0 0 0 8.2128906 9.6621094 C 5.6754768 10.230693 3.2861897 12.048234 2.7832031 14.894531 A 1.50015 1.50015 0 0 0 2.78125 14.90625 C 2.394836 17.200265 2 20.190694 2 24.5 C 2 28.801151 2.3961903 31.712324 2.8847656 34.126953 C 3.4000756 36.889296 5.7342165 38.761817 8.3105469 39.337891 A 1.50015 1.50015 0 0 0 8.3476562 39.347656 C 11.86271 40.040284 17.598467 40.5 23.951172 40.5 C 30.303877 40.5 36.042686 40.04028 39.558594 39.347656 A 1.50015 1.50015 0 0 0 39.595703 39.337891 C 42.133117 38.769306 44.522404 36.951766 45.025391 34.105469 A 1.50015 1.50015 0 0 0 45.029297 34.083984 C 45.409789 31.743169 45.902812 28.755621 46 24.439453 A 1.50015 1.50015 0 0 0 46 24.40625 C 46 20.087697 45.50571 17.078675 45.023438 14.695312 C 44.512192 11.927074 42.175378 10.049478 39.595703 9.4726562 A 1.50015 1.50015 0 0 0 39.476562 9.4511719 C 36.0464 8.9689502 30.211115 8.5 23.857422 8.5 z M 20.15625 17.001953 C 20.526656 16.994297 20.909531 17.081906 21.269531 17.285156 L 29.873047 22.146484 C 31.324047 22.966484 31.324047 25.035469 29.873047 25.855469 L 21.269531 30.716797 C 19.830531 31.528797 18.037109 30.500328 18.037109 28.861328 L 18.037109 19.138672 C 18.037109 17.909422 19.045031 17.024922 20.15625 17.001953 z">
+                            </path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav id="nav_blog">
+            <div class="container flex">
+                <div>
+                    <a href="index.html">
+                        <img  src="./images/logo.png" alt="Mpl Logo" width="172px">
+                    </a>
+                </div>
+                <div id="nav_options">
+                    <ul>
+                        <li>TODAY'S MATCH PREDICTION</li>
+                        <li>NEWS
+                            <svg x="0" y="0" width="12px" height="12px" viewBox="0 0 24 24" style="fill: transparent;">
+                                <path d="M 6 8 L 14 16 L 22 8" stroke="black" stroke-width="3px"></path>
+                            </svg>
+                            <div>
+                                <div>
+                                    MPL Announcement
+                                </div>
+                            </div>
+                        </li>
+                        <li>GAMES
+                            <svg x="0" y="0" width="12px" height="12px" viewBox="0 0 24 24" style="fill: transparent;">
+                                <path d="M 6 8 L 14 16 L 22 8" stroke="black" stroke-width="3px"></path>
+                            </svg>
+                        </li>
+                        <li>FANTASY
+                            <svg x="0" y="0" width="12px" height="12px" viewBox="0 0 24 24" style="fill: transparent;">
+                                <path d="M 6 8 L 14 16 L 22 8" stroke="black" stroke-width="3px"></path>
+                            </svg>
+                            <div>
+                                <div class="sub-sub-menu">
+                                    Cricket
+                                    <svg x="0" y="0" width="10px" height="10px" viewBox="0 0 24 24"
+                                        style="fill: transparent;">
+                                        <path d="M 4 8 L 12 14 L 20 8" stroke="black" stroke-width="2px"
+                                            transform="rotate(270 12 12)"></path>
+                                    </svg>
+                                    <div>
+                                        Fantasy Premier League
+                                    </div>
+                                </div>
+                                <div>
+                                    Football
+                                </div>
+                            </div>
+                        </li>
+                        <li>CARD GAMES
+                            <svg x="0" y="0" width="12px" height="12px" viewBox="0 0 24 24" style="fill: transparent;">
+                                <path d="M 6 8 L 14 16 L 22 8" stroke="black" stroke-width="3px"></path>
+                            </svg>
+                            <div>
+                                <div>
+                                    Poker
+                                </div>
+                                <div>
+                                    Rummy
+                                </div>
+                            </div>
+                        </li>
+                        <li>ABOUT US</li>
+                        <li>ALL POSTS</li>
+                    </ul>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50"
+                        style=" fill:#000000;">
+                        <path
+                            d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z">
+                        </path>
+                    </svg>
+                    <div id="search_box">
+                        <div>
+                            <input type="text" id="search_input">
+                            <button>Search
+                                <svg x="0" y="0" width="10px" height="10px" viewBox="0 0 24 24"
+                                    style="fill: transparent;">
+                                    <path d="M 4 8 L 12 14 L 20 8" stroke="black" stroke-width="2px"
+                                        transform="rotate(270 12 12)"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="search_result"></div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav id="mobile_nav">
+            <span id="mobile_hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 24 24"
+                    style=" fill:#ffffff;">
+                    <path
+                        d="M 3 5 A 1.0001 1.0001 0 1 0 3 7 L 21 7 A 1.0001 1.0001 0 1 0 21 5 L 3 5 z M 3 11 A 1.0001 1.0001 0 1 0 3 13 L 21 13 A 1.0001 1.0001 0 1 0 21 11 L 3 11 z M 3 17 A 1.0001 1.0001 0 1 0 3 19 L 21 19 A 1.0001 1.0001 0 1 0 21 17 L 3 17 z">
+                    </path>
+                </svg>
+            </span>
+            <span id="mobile_brand">
+                <img src="./images/white-logo.webp" width="180px">
+            </span>
+            <span id="mobile_search">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 50 50"
+                    style=" fill:#ffffff;">
+                    <path
+                        d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z">
+                    </path>
+                </svg>
+            </span>
+            <div id="mobile_nav_options">
+                <div>
+                    <div id="mobile_options_top">
+                        <ul>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                                    viewBox="0 0 24 24" style="fill:#ffffff;">
+                                    <path
+                                        d="M17.525,9H14V7c0-1.032,0.084-1.682,1.563-1.682h1.868v-3.18C16.522,2.044,15.608,1.998,14.693,2 C11.98,2,10,3.657,10,6.699V9H7v4l3-0.001V22h4v-9.003l3.066-0.001L17.525,9z">
+                                    </path>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                                    viewBox="0 0 24 24" style=" fill:#ffffff;">
+                                    <path
+                                        d="M 8 3 C 5.243 3 3 5.243 3 8 L 3 16 C 3 18.757 5.243 21 8 21 L 16 21 C 18.757 21 21 18.757 21 16 L 21 8 C 21 5.243 18.757 3 16 3 L 8 3 z M 8 5 L 16 5 C 17.654 5 19 6.346 19 8 L 19 16 C 19 17.654 17.654 19 16 19 L 8 19 C 6.346 19 5 17.654 5 16 L 5 8 C 5 6.346 6.346 5 8 5 z M 17 6 A 1 1 0 0 0 16 7 A 1 1 0 0 0 17 8 A 1 1 0 0 0 18 7 A 1 1 0 0 0 17 6 z M 12 7 C 9.243 7 7 9.243 7 12 C 7 14.757 9.243 17 12 17 C 14.757 17 17 14.757 17 12 C 17 9.243 14.757 7 12 7 z M 12 9 C 13.654 9 15 10.346 15 12 C 15 13.654 13.654 15 12 15 C 10.346 15 9 13.654 9 12 C 9 10.346 10.346 9 12 9 z">
+                                    </path>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                                    viewBox="0 0 30 30" style=" fill:#ffffff;">
+                                    <path
+                                        d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z">
+                                    </path>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18px" height="18px"
+                                    viewBox="0 0 50 50" style=" fill:#ffffff;">
+                                    <path
+                                        d="M 41 5 C 34.210938 4.992188 30.46875 8.796875 28.167969 16.210938 C 29.371094 15.765625 30.578125 15.214844 31.671875 15.214844 C 33.972656 15.214844 34.738281 16.070313 34.410156 18.726563 C 34.300781 20.386719 33.644531 23.066406 31.671875 26.164063 C 29.699219 29.152344 27.984375 30 27 30 C 25.796875 30 24.882813 28.269531 23.898438 23.621094 C 23.570313 22.292969 22.804688 19.304688 21.925781 13.664063 C 21.160156 8.464844 18.613281 5.667969 15 6 C 13.46875 6.109375 11.636719 7.535156 8.570313 10.191406 C 6.378906 12.183594 4.300781 13.621094 2 15.613281 L 4.191406 18.421875 C 6.269531 16.984375 7.476563 16.429688 7.804688 16.429688 C 9.335938 16.429688 10.757813 18.863281 12.183594 23.84375 C 13.386719 28.378906 14.699219 32.914063 15.90625 37.449219 C 17.765625 42.429688 20.066406 44.863281 22.695313 44.863281 C 27.074219 44.863281 32.328125 40.882813 38.570313 32.695313 C 44.699219 24.949219 47.78125 18.535156 48 14 C 48.21875 8.027344 45.816406 5.109375 41 5 Z">
+                                    </path>
+                                </svg>
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18"
+                                    viewBox="0 0 48 48" style=" fill:#ffffff;">
+                                    <path
+                                        d="M 23.857422 8.5 C 17.504717 8.5 11.602344 8.9526234 8.234375 9.65625 A 1.50015 1.50015 0 0 0 8.2128906 9.6621094 C 5.6754768 10.230693 3.2861897 12.048234 2.7832031 14.894531 A 1.50015 1.50015 0 0 0 2.78125 14.90625 C 2.394836 17.200265 2 20.190694 2 24.5 C 2 28.801151 2.3961903 31.712324 2.8847656 34.126953 C 3.4000756 36.889296 5.7342165 38.761817 8.3105469 39.337891 A 1.50015 1.50015 0 0 0 8.3476562 39.347656 C 11.86271 40.040284 17.598467 40.5 23.951172 40.5 C 30.303877 40.5 36.042686 40.04028 39.558594 39.347656 A 1.50015 1.50015 0 0 0 39.595703 39.337891 C 42.133117 38.769306 44.522404 36.951766 45.025391 34.105469 A 1.50015 1.50015 0 0 0 45.029297 34.083984 C 45.409789 31.743169 45.902812 28.755621 46 24.439453 A 1.50015 1.50015 0 0 0 46 24.40625 C 46 20.087697 45.50571 17.078675 45.023438 14.695312 C 44.512192 11.927074 42.175378 10.049478 39.595703 9.4726562 A 1.50015 1.50015 0 0 0 39.476562 9.4511719 C 36.0464 8.9689502 30.211115 8.5 23.857422 8.5 z M 20.15625 17.001953 C 20.526656 16.994297 20.909531 17.081906 21.269531 17.285156 L 29.873047 22.146484 C 31.324047 22.966484 31.324047 25.035469 29.873047 25.855469 L 21.269531 30.716797 C 19.830531 31.528797 18.037109 30.500328 18.037109 28.861328 L 18.037109 19.138672 C 18.037109 17.909422 19.045031 17.024922 20.15625 17.001953 z">
+                                    </path>
+                                </svg>
+                            </li>
+                        </ul>
+                        <span id="close_nav_options">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28"
+                                viewBox="0 0 24 24" style=" fill:#ffffff;">
+                                <path
+                                    d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div id="mobile_options_content">
+                        <ul>
+                            <li>Today's Match Prediction</li>
+                            <li>
+                                <div>
+                                    News
+                                    <img src="./images/right-arrow.png" width="24px">
+                                </div>
+                                <div>
+                                    <div>
+                                        MPL Announcement
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    Games
+                                    <img src="./images/right-arrow.png" width="24px">
+                                </div>
+                                <div>
+                                    <div>
+                                        Supernova
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    Fantasy
+                                    <img src="./images/right-arrow.png" width="24px">
+                                </div>
+                                <div>
+                                    <div>
+                                        Cricket
+                                    </div>
+                                    <div>
+                                        Football
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    Card Games
+                                    <img src="./images/right-arrow.png" width="24px">
+                                </div>
+                                <div>
+                                    <div>
+                                        Poker
+                                    </div>
+                                    <div>
+                                        Rummy
+                                    </div>
+                                </div>
+                            </li>
+                            <li>About Us</li>
+                            <li>ALL POSTS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile_search_modal">
+                <span id="mobile_search_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 24 24"
+                        style=" fill:#ffffff;">
+                        <path
+                            d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z">
+                        </path>
+                    </svg>
+                </span>
+
+                <div>Search</div>
+                <input type="text">
+
+
+                <div id="search_modal_result"></div>
+            </div>
+        </nav>
+
+        <section class="container" id="top_section">
+            <div id="trending_container">
+                <span>
+                    TRENDING NOW
+                </span>
+                <span></span>
+            </div>
+            <div id="highlighted_news">
+            </div>
+
+        </section>
+
+        <section class="container" id="middle_section">
+            <div id="left_middle">
+                <section id="match_prediction">
+                    <span class="header">TODAY'S MATCH PREDICTION</span>
+                </section>
+                <section id="latest_posts">
+                    <span class="header">Latest Posts</span>
+                </section>
+            </div>
+            <div id="right_middle">
+                <section id="digital_games">
+                    <span class="header">DIGITAL SKILL GAMES</span>
+                </section>
+                <section id="popular_trends">
+                    <span class="header">POPULAR TRENDS</span>
+                </section>
+            </div>
+        </section>
+
+
+        <span id="goto_top_btn"><img src="./images/up-arrow.png" width="20px"></span>
+
+        <!-- Signing -->
+        <div id="overlay">
+            <div id="overlay_background"></div>
+            <div id="overlay_signup" class="overlay-content">
+                <span id="signup_overlay_close_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28"
+                        viewBox="0 0 24 24" style=" fill:#ffffff;">
+                        <path
+                            d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z">
+                        </path>
+                    </svg>
+                </span>
+                <h2>Sign Up</h2>
+                <div class="alert-success" id="signup_success">
+                    <p>SignUp Successful</p>
+                </div>
+                <div class="alert-failed" id="signup_failed">
+                    <p>SignUp Failed, User Already Exists</p>
+                </div>
+                <form id="signup_form">
+                    <input type="text" id="signup_name" min="1" placeholder="Name" required>
+                    <input type="mail" id="signup_mail" placeholder="Email" required>
+                    <input type="password" id="signup_pass" min="6" placeholder="Password" required>
+                    <input type="text" id="signup_username" min="1" placeholder="Username" required>
+                    <input type="tel" id="signup_mobile" min="10" placeholder="Mobile Number" required>
+                    <input type="text" id="signup_description" placeholder="Description">
+                    <button type="submit" class="btn">SignUp</button>
+                </form>
+            </div>
+            <div id="overlay_login" class="overlay-content">
+                <span id="login_overlay_close_btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28"
+                        viewBox="0 0 24 24" style=" fill:#ffffff;">
+                        <path
+                            d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z">
+                        </path>
+                    </svg>
+                </span>
+                <h2>SIGN IN</h2>
+                <h3>Welcome! Log into your account</h3>
+                <div class="alert-failed" id="login_failed">
+                    <p>Login Failed, Invalid login creadentials</p>
+                </div>
+                <form id="login_form">
+                    <input type="text" id="login_username" min="1" placeholder="Your Username" required>
+                    <input type="password" id="login_pass" placeholder="Your Password" required>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="footer">
+            <div class="footerA">
+                <div class="heading">EDITOR PICKS</div>
+                <div class="rohit">
+
+                    <img class="imgrum"
+                        src="https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/11/Rummy-vs-Teen-Patti-Which-is-More-Popular-During-Indian-Festivals-.png.webp"
+                        alt="">
+                    <div class="news">Rummy vs. Teen Patti – Which is More Popular During Indian Festivals?
+                        <div class="date">November 10, 2021</div>
+                    </div>
+                </div>
+                <div class="rohit">
+
+                    <img class="imgrum"
+                        src="https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/11/card-game-movies.png.webp"
+                        alt="">
+                    <div class="news">Must-Watch Movies for Card Game Lovers
+                        <div class="date">November 3, 2021</div>
+                    </div>
+                </div>
+                <div class="rohit">
+
+                    <img class="imgrum"
+                        src="https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/rummy-joker.png.webp"
+                        alt="">
+                    <div class="news">Rummy Joker Strategies for Beginners: Importance of Joker and Tips to Use Joker in
+                        Rummy <div class="date">October 18, 2021</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footerB">
+                <div class="heading">EDITOR PICKS</div>
+                <div class="rohit">
+
+                    <img class="imgrum"
+                        src="https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/03/Rohit-Sharma.png.webp"
+                        alt="">
+                    <div class="news">Rohit Sharma named India captain for T20Is against New Zealand <div class="date">
+                            November 9,2021</div>
+                    </div>
+                </div>
+                <div class="rohit">
+
+                    <img class="imgrum"
+                        src="https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/11/Eng-vs-NZ-1st-Semi.png.webp"
+                        alt="">
+                    <div class="news">ENG vs NZ, T20 World Cup 2021, 1st Semifinal – Fantasy Preview
+
+                        <div class="date">November 9, 2021</div>
+                    </div>
+                </div>
+                <div class="rohit">
+
+                    <img class="imgrum"
+                        src="https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/11/ZIMW-VS-BANW-1ST-ODI.png.webp"
+                        alt="">
+                    <div class="news">ZIM-W vs BAN-W 1st ODI: Fantasy Preview and MPL Top Picks
+                        <div class="date">November 9, 2021</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footerC">
+                <div class="heading">POPULAR CATEGORY</div>
+                <div class="total1">
+                    <div>Cricket</div>
+                    <div>1055</div>
+                </div>
+                <div class="total">
+                    <div>Fantasy</div>
+                    <div>83</div>
+                </div>
+                <div class="total">
+                    <div>Fantasy Prediction</div>
+                    <div>616</div>
+                </div>
+                <div class="total">
+                    <div>Top Blogs</div>
+                    <div>279</div>
+                </div>
+                <div class="total">
+                    <div>News</div>
+                    <div>249</div>
+                </div>
+                <div class="total">
+                    <div>Games</div>
+                    <div>212</div>
+                </div>
+                <div class="total">
+                    <div>Card Games</div>
+                    <div>150</div>
+                </div>
+                <div class="total">
+                    <div>Football</div>
+                    <div>116</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function setDate() {
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            let date = new Date();
+
+            let currentDate = days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+
+            document.getElementById("todays_date").textContent = currentDate;
+        }
+
+        setDate();
+
+        // Nav script starts
+        let search_ico = document.querySelector("#nav_blog > div > div:nth-of-type(3) > svg");
+        search_ico.addEventListener("click", showSearchBox);
+
+        let goto_top_btn = document.getElementById("goto_top_btn");
+        goto_top_btn.addEventListener("click", gotoTop);
+
+        let mobile_search = document.getElementById("mobile_search");
+        mobile_search.addEventListener("click", showMobileSearch);
+
+        function showMobileSearch() {
+            document.getElementById("mobile_search_modal").style.display = "block";
+        }
+
+        let mobile_search_close = document.getElementById("mobile_search_close");
+        mobile_search_close.addEventListener("click", closeMobileSearch);
+
+        function closeMobileSearch() {
+            document.getElementById("mobile_search_modal").style.display = "none";
+        }
+
+        let mobile_hamburger = document.getElementById("mobile_hamburger");
+        mobile_hamburger.addEventListener("click", showMobileNavOptions);
+
+        function showMobileNavOptions() {
+            document.getElementById("mobile_nav_options").style.display = "block";
+        }
+
+        let mobile_nav_close = document.querySelector("#close_nav_options");
+        close_nav_options.addEventListener("click", closeMobileNavOptions);
+
+        function closeMobileNavOptions() {
+            document.getElementById("mobile_nav_options").style.display = "none";
+        }
+
+        function setMobileOptionDrop() {
+            let options = document.querySelectorAll("#mobile_options_content > ul > li");
+
+            // console.log(options);
+
+            options.forEach(e => {
+                let div = e.querySelector("div:nth-of-type(2)");
+                let arrow = e.querySelector("div:nth-of-type(1) > img");
+                if (div !== null) {
+                    div.style.display = "none";
+                    e.addEventListener("click", () => {
+                        if (div.style.display == "none") {
+                            div.style.display = "block";
+                            arrow.src = "./images/down-white-arrow.png";
+                        } else {
+                            div.style.display = "none";
+                            arrow.src = "./images/right-arrow.png";
+                        }
+                    });
+                }
+            })
+        }
+
+        setMobileOptionDrop();
+
+
+        function showSearchBox() {
+            let search_box = document.getElementById("search_box");
+
+            search_box.style.display = "block";
+
+
+            let search_input = document.getElementById("search_input");
+
+            search_input.focus();
+
+            search_input.onblur = () => {
+                search_box.style.opacity = "0";
+                search_box.style.transform = "translateY(30px)";
+                setTimeout(() => {
+                    search_box.style.display = "none";
+                    search_box.style.opacity = "1";
+                    search_box.style.transform = "none";
+                }, 200);
+            }
+
+        }
+
+        function gotoTop() {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        let changed = false;
+        window.onscroll = () => {
+            let nav = document.getElementById("nav_blog");
+            let top_btn = document.getElementById("goto_top_btn");
+            if (window.scrollY > nav.offsetHeight && !changed) {
+                nav.classList = "nav_scrolled";
+                changed = true;
+                top_btn.style.display = "flex";
+            } else if (window.scrollY <= nav.offsetHeight) {
+                changed = false;
+                nav.classList.remove("nav_scrolled");
+                top_btn.style.display = "none";
+            }
+        }
+
+        // Nav script ends
+
+
+        let trendingItems = ["Must-Watch Movies for Card Game Lovers", "IND vs AFG, T20 World Cup 2021 – Fantasy Preview and Top Picks", "NZ vs SCO, T20 World Cup 2021 – Fantasy Preview and Top Picks"];
+
+        let games = [
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2020/09/IPL-fantasy-cricket-strategy.png.webp",
+                title: "IPL Fantasy Cricket Strategies"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2020/09/How-does-IPL-fantasy-League-work-Post.png.webp",
+                title: "How does IPL fantasy League work?"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/09/sports-games.png.webp",
+                title: "Top 20 Multiplayer Sports Games in 2021"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/09/best-brain-games-2-1.png.webp",
+                title: "The Best Brain Games to Play on Android Devices"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/onur-binay-2M6qt9fzRBw-unsplash.png.webp",
+                title: "A Deep Dive Into The Benefits Of Playing Games Online"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/Hypercasual-gaming.png.webp",
+                title: "Popular Hyper Casual Games for a Fast-Paced Gameplay"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/MPL-Quiz.png.webp",
+                title: "How Trivia Games Can Be Both Fun and Informative"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/3-2.png.webp",
+                title: "How the pandemic has pushed casual gaming worldwide"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/09/Game-night_30-best-board-games.png.webp",
+                title: "Best Board Games to Play Online"
+            },
+            {
+                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/free-online-games.png.webp",
+                title: "20 Free Online Games for Adults to Play Against Live Players"
+            }
+        ]
+
+        function setTrendingNow() {
+            let counter = 0;
+            let trending = document.querySelector("#trending_container > span:nth-of-type(2)");
+            trending.textContent = trendingItems[counter];
+            trending.style.transition = "opacity 500ms ease, margin-left 500ms ease";
+            setTimeout(() => {
+                trending.style.opacity = 0;
+                trending.style.marginLeft = "0.2rem";
+            }, 3700);
+            setInterval(() => {
+                setTimeout(() => {
+                    trending.style.opacity = 1;
+                    trending.style.marginLeft = "2rem";
+                }, 200);
+                setTimeout(() => {
+                    trending.style.opacity = 0;
+                    trending.style.marginLeft = "0.2rem";
+                }, 3700);
+
+                counter++;
+                trending.textContent = trendingItems[(counter % trendingItems.length)];
+            }, 4000);
+        }
+        setTrendingNow();
+
+        function setHighlightedNews(data) {
+            // console.log(data);
+
+            let container = document.getElementById("highlighted_news");
+
+            let content = document.createElement("div");
+
+            for (let i = 0; i < 4; i++) {
+
+                let div = document.createElement("div");
+
+                let div1 = document.createElement("div");
+                div1.className = "highlighted_news_content";
+
+                let span = document.createElement("span");
+                span.textContent = "Cricket";
+
+                let p = document.createElement("p");
+                p.textContent = data[i].title;
+
+                div1.append(span, p);
+
+                let img_div = document.createElement("div");
+
+                img_div.style.backgroundImage = `url(${data[i].urlToImage})`;
+
+                div.append(div1, img_div);
+
+                if (i == 0) {
+                    container.append(div);
+                } else {
+                    content.append(div);
+                }
+            }
+            container.append(content);
+        }
+
+        async function getNewsData() {
+            try {
+                let res = await fetch(`http://localhost:3000/articles?latest=true&category=Fantasy&limit=4`);
+                let data = await res.json();
+                // return data;
+                console.log("data", data)
+
+
+                setHighlightedNews(data);
+
+
+                res = await fetch(`http://localhost:3000/articles?latest=true&category=Fantasy Prediction&limit=5`);
+                data = await res.json();
+                setMatchPrediction(data);
+                console.log(data)
+
+                res = await fetch(`http://localhost:3000/articles?latest=true&limit=15`);
+                data = await res.json();
+                setLatestPosts(data);
+
+
+                res = await fetch(`http://localhost:3000/articles?category=MPL Announcements&limit=15`);
+                data = await res.json();
+                // console.log(data)
+                setPopularTrends(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        getNewsData();
+
+
+        function setMatchPrediction(data) {
+            // console.log(data);
+
+            let container = document.getElementById("match_prediction");
+
+            // let count = 3;
+
+            let content = document.createElement("div");
+
+            for (let i = 0; i < 5; i++) {
+                let div = document.createElement("div");
+
+                let imgDiv = document.createElement("div");
+
+                let img = document.createElement("img");
+                img.src = data[i].urlToImage;
+
+                imgDiv.append(img);
+
+                let div2 = document.createElement("div");
+
+                let title = document.createElement("p");
+                title.textContent = data[i].title;
+
+                let date = document.createElement("p");
+                date.textContent = data[i].publishedAt;
+
+                div2.append(title, date);
+
+                if (i == 0) {
+                    let description = document.createElement("p");
+                    description.textContent = data[i].description;
+
+                    div2.append(description);
+                }
+
+                div.append(imgDiv, div2);
+
+                content.append(div);
+
+                // count++;
+            }
+
+            container.append(content);
+
+        }
+
+        function setLatestPosts(data) {
+            // console.log(data);
+
+            let container = document.getElementById("latest_posts");
+
+            let content = document.createElement("div");
+
+            for (let i = 0; i < 15; i++) {
+                let div = document.createElement("div");
+
+                let imgDiv = document.createElement("div");
+
+                let img = document.createElement("img");
+                img.src = data[i].urlToImage;
+
+                let news = document.createElement("span");
+                news.textContent = "Sports";
+
+                imgDiv.append(img, news);
+
+                let title = document.createElement("p");
+                title.textContent = data[i].title;
+
+                div.append(imgDiv, title);
+
+                content.append(div);
+            }
+
+            container.append(content);
+
+        }
+
+        function setDigitalGames() {
+            let digitalGames = document.getElementById("digital_games");
+
+            let content = document.createElement("div");
+
+            games.forEach(({ imgUrl, title }) => {
+                let div = document.createElement("div");
+
+                let imgDiv = document.createElement("div");
+                imgDiv.style.backgroundImage = `url(${imgUrl})`;
+
+                let tag = document.createElement("span");
+                tag.textContent = "Games";
+                imgDiv.append(tag);
+
+                let name = document.createElement("p");
+                name.textContent = title;
+
+                div.append(imgDiv, name);
+
+                content.append(div);
+
+            });
+
+            digitalGames.append(content);
+        }
+
+        setDigitalGames();
+
+        function setPopularTrends(data) {
+            let container = document.getElementById("popular_trends");
+
+            let content = document.createElement("div");
+
+            for (let i = 0; i < 3; i++) {
+                let div = document.createElement("div");
+
+                let imgDiv = document.createElement("div");
+                imgDiv.style.backgroundImage = `url(${data[i].urlToImage})`;
+
+                let tag = document.createElement("span");
+                tag.textContent = "Games";
+                imgDiv.append(tag);
+
+                let div2 = document.createElement("div");
+
+                let title = document.createElement("p");
+                title.textContent = data[i].title;
+
+                let date = document.createElement("p");
+                date.textContent = data[i].publishedAt;
+
+                div2.append(title, date);
+
+                div.append(imgDiv, div2);
+
+                if (i == 0) {
+                    let p = document.createElement("p");
+                    p.textContent = data[i].description;
+                    div2.append(p)
+                    container.append(div);
+                } else {
+                    content.append(div);
+                }
+            }
+
+            container.append(content);
+        }
+
+
+        async function getQueryResult(query) {
+            try {
+                let res = await fetch(`https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=6e090dfbade046388eb6c0239e50db8b`);
+
+                let data = await res.json();
+                console.log(data)
+                return data;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        getQueryResult("cricket");
+
+        let searchTimeout;
+        function searchDebounce(src, target, items) {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                showSearchMobResult(src, target, items);
+            }, 500);
+        }
+
+        document.querySelector("#mobile_search_modal > input").addEventListener("input", () => {
+            searchDebounce("#mobile_search_modal > input", "search_modal_result", 4)
+        });
+
+        document.querySelector("#search_input").addEventListener("input", () => {
+            searchDebounce("#search_input", "search_result", 6)
+        });
+
+        async function showSearchMobResult(src, target, items) {
+            let query = document.querySelector(src);
+
+            let container = document.getElementById(target);
+
+            container.innerHTML = "";
+
+            if (query.value.length == 0) {
+                return;
+            }
+
+            let result = await getQueryResult(query.value);
+
+            result = result.articles;
+
+
+
+            if (result.length == 0) {
+                return;
+            }
+
+            for (let i = 0; i < items; i++) {
+                let div = document.createElement("div");
+
+                let imgDiv = document.createElement("div");
+
+                let img = document.createElement("img");
+                img.src = result[i].urlToImage;
+
+                imgDiv.appendChild(img);
+
+                let detailsDiv = document.createElement("div");
+
+                let title = document.createElement("p");
+                title.textContent = result[i].title;
+
+                let date = document.createElement("p");
+                date.textContent = result[i].publishedAt;
+
+                detailsDiv.append(title, date);
+
+                div.append(imgDiv, detailsDiv);
+
+                container.append(div);
+            }
+
+        }
+
+
+
+        // Signing
+
+        document.getElementById("login_btn").addEventListener("click", () => { showOverlay('login') });
+        document.getElementById("join_btn").addEventListener("click", () => { showOverlay('signup') });
+        document.getElementById("login_overlay_close_btn").addEventListener("click", closeOverlay);
+        document.getElementById("signup_overlay_close_btn").addEventListener("click", closeOverlay);
+
+
+        function showOverlay(t) {
+            let overlay = document.getElementById("overlay");
+            overlay.style.display = "block";
+            if (t == "signup") {
+                document.getElementById("overlay_signup").style.display = "block";
+                document.getElementById("overlay_login").style.display = "none";
+            } else if (t == "login") {
+                document.getElementById("overlay_signup").style.display = "none";
+                document.getElementById("overlay_login").style.display = "block";
+            }
+            overlay.onscroll
+        }
+
+        function setSignOverlay() {
+            document.getElementById("overlay_background").addEventListener("click", () => { closeOverlay() });
+
+            document.getElementById("signup_form").addEventListener("submit", () => { SignUp(event) });
+
+            document.getElementById("login_form").addEventListener("submit", () => { Login(event) });
+        }
+
+        setSignOverlay();
+
+        async function SignUp(e) {
+            e.preventDefault();
+
+            let form = document.getElementById("signup_form");
+
+            let details = {
+                name: form.signup_name.value,
+                email: form.signup_mail.value,
+                password: form.signup_pass.value,
+                username: form.signup_username.value,
+                mobile: form.signup_mobile.value,
+                description: form.signup_description.value,
+            }
+
+            // console.log(details);
+
+            details = JSON.stringify(details);
+
+            try {
+                let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/register", {
+                    method: "POST",
+                    body: details,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                let data = await res.json();
+
+                if (data.error) {
+                    showSignUpFailed();
+                } else {
+                    showSignUpSuccessful();
+                }
+
+            } catch (e) {
+                // console.log(e);
+            }
+
+        }
+
+        async function Login(e) {
+            e.preventDefault();
+
+            document.getElementById("login_failed").style.display = "none";
+
+            let form = document.getElementById("login_form");
+
+            let details = {
+                password: form.login_pass.value,
+                username: form.login_username.value,
+            }
+
+            console.log(details);
+
+            details = JSON.stringify(details);
+
+            try {
+                let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
+                    method: "POST",
+                    body: details,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                let data = await res.json();
+
+                console.log(data);
+
+                if (data.error) {
+                    showLoginFailed();
+                } else {
+                    fetchUserData(form.login_username.value, data.token);
+                }
+
+            } catch (e) {
+                // console.log(e);
+            }
+
+        }
+
+        function closeOverlay() {
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function showSignUpFailed() {
+            // alert("failed");
+            document.getElementById("signup_failed").style.display = "block";
+            document.getElementById("signup_success").style.display = "none";
+        }
+
+        function showSignUpSuccessful() {
+            // alert("success");
+            document.getElementById("signup_failed").style.display = "none";
+            document.getElementById("signup_success").style.display = "block";
+            setTimeout(() => { closeOverlay() }, 500);
+        }
+
+        async function fetchUserData(username, token) {
+            let res = await fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            let data = await res.json();
+
+            // console.log(data);
+
+            showLoggedUser(data);
+        }
+
+        function showLoginFailed() {
+            document.getElementById("login_failed").style.display = "block";
+        }
+
+        function showLoggedUser(data) {
+            let nav_user = document.getElementById("nav_user");
+            nav_user.querySelector("#logged_username").innerText = data.username;
+            nav_user.style.display = "flex";
+
+            document.getElementById("login_option").style.display = "none";
+
+            closeOverlay();
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

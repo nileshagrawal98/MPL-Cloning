@@ -726,7 +726,7 @@
 
         async function getNewsData() {
             try {
-                let res = await fetch(`http://localhost:3000/articles?latest=true&category=Fantasy&limit=4`);
+                let res = await fetch(`http://shielded-stream-72476.herokuapp.com/articles?latest=true&category=Fantasy&limit=4`);
                 let data = await res.json();
                 // return data;
                 console.log("data", data)
@@ -735,17 +735,17 @@
                 setHighlightedNews(data);
 
 
-                res = await fetch(`http://localhost:3000/articles?latest=true&category=Fantasy Prediction&limit=5`);
+                res = await fetch(`http://shielded-stream-72476.herokuapp.com/articles?latest=true&category=Fantasy Prediction&limit=5`);
                 data = await res.json();
                 setMatchPrediction(data);
                 console.log(data)
 
-                res = await fetch(`http://localhost:3000/articles?latest=true&limit=15`);
+                res = await fetch(`http://shielded-stream-72476.herokuapp.com/articles?latest=true&limit=15`);
                 data = await res.json();
                 setLatestPosts(data);
 
 
-                res = await fetch(`http://localhost:3000/articles?category=MPL Announcements&limit=15`);
+                res = await fetch(`http://shielded-stream-72476.herokuapp.com/articles?category=MPL Announcements&limit=15`);
                 data = await res.json();
                 // console.log(data)
                 setPopularTrends(data);

@@ -3,6 +3,7 @@ const app = express();
 const favicon = require('serve-favicon');
 const connect = require('./config/db');
 const path = require('path');
+require('dotenv').config();
 
 app.use(express.json());
 app.set('view engine', 'ejs');
@@ -20,17 +21,22 @@ app.get('/blog', (req, res) => {
     res.render('blog');
 });
 
+app.get('/', (req, res) => {
+    res.render('blog');
+});
+
 app.get('/article_post', (req, res) => {
     res.render('article_post');
 });
 
 
+const port = process.env.PORT || 3000;
 
 const start = () => {
-    app.listen(3000, async () => {
+    app.listen(port, async () => {
         await connect();
 
-        console.log("Listening on port 3000");
+        console.log(`Listening on port ${port}`);
     });
 }
 

@@ -2,713 +2,612 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/blog_style.css" type='text/css'>
-    <title>Home | Mpl Blog</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/blog_style.css" type='text/css'>
+  <link rel="stylesheet" href="/css/nav_blog.css" type='text/css'>
+  <link rel="stylesheet" href="/css/signing.css" type='text/css'>
+  <link rel="stylesheet" href="/css/footer_blog.css" type='text/css'>
+
+
+
+  <title>Home | Mpl Blog</title>
 </head>
 
 <body>
 
-    <div>
+  <% function getFormattedDate(d) { %>
+  <%    let date = new Date(d); %>
+  <%    let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
+  <%    return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`; %>
+  <% } %>
 
-        <%- include('partials/navbar') %>
-        <%- include('partials/signing') %>
+  <div>
 
+    <%- include('partials/navbar') %>
+    <%- include('partials/signing') %>
 
-        <section class="container" id="top_section">
-            <div id="trending_container">
+    <section class="container" id="top_section">
+      <div id="trending_container">
+        <span>
+          TRENDING NOW
+        </span>
+        <span></span>
+      </div>
+      <div id="highlighted_news">
+        <div>
+          <div class="highlighted_news_content">
+            <span>
+              <%= highlighted[0].category[0] %>
+            </span>
+            <p>
+              <%= highlighted[0].title %>
+            </p>
+          </div>
+          <!-- <% let url = `${highlighted[0].urlToImage}` %> -->
+          <div style="background-image: url(<%= `${highlighted[0].urlToImage}` %>)"></div>
+        </div>
+        <div>
+          <% for(let i=1 ; i < 4 ; i++) { %>
+          <div>
+            <div class="highlighted_news_content">
+              <span>
+                <%= highlighted[i].category[0] %>
+              </span>
+              <p>
+                <%= highlighted[i].title %>
+              </p>
+            </div>
+            <!-- <% let url = `${highlighted[0].urlToImage}` %> -->
+            <div style="background-image: url(<%= `${highlighted[i].urlToImage}` %>)"></div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="container" id="middle_section">
+      <div id="left_middle">
+        <section id="match_prediction">
+          <!-- <span class="header">TODAY'S MATCH PREDICTION</span> -->
+          <span class="header">TODAY'S MATCH PREDICTION</span>
+          <div>
+            <% for (let i=0; i < 5 ; i++) { %>
+            <div>
+              <div>
+                <img src="<%=matchPredictions[i].urlToImage%>">
+              </div>
+              <div>
+                <p>
+                  <%=matchPredictions[i].title%>
+                </p>
+                <p>
+                  <%=getFormattedDate(matchPredictions[i].publishedAt)%>
+                </p>
+                <% if(i==0) { %>
+                <p>
+                  <%=matchPredictions[i].description%>
+                </p>
+                <% } %>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </section>
+        <section id="latest_posts">
+          <span class="header">Latest Posts</span>
+          <div>
+            <% latestPosts.forEach(({urlToImage, category, title})=> { %>
+
+            <div>
+              <div>
+                <img src="<%= urlToImage %>">
                 <span>
-                    TRENDING NOW
+                  <%= category[0] %>
                 </span>
-                <span></span>
-            </div>
-            <div id="highlighted_news">
+              </div>
+              <p>
+                <%= title %>
+              </p>
             </div>
 
+            <% }); %>
+          </div>
         </section>
+      </div>
+      <div id="right_middle">
+        <section id="digital_games">
+          <span class="header">DIGITAL SKILL GAMES</span>
+          <div>
+            <% digitalGames.forEach(({urlToImage, title, category})=> { %>
 
-        <section class="container" id="middle_section">
-            <div id="left_middle">
-                <section id="match_prediction">
-                    <span class="header">TODAY'S MATCH PREDICTION</span>
-                </section>
-                <section id="latest_posts">
-                    <span class="header">Latest Posts</span>
-                </section>
+            <div>
+              <div style='background-image: url(<%= `${urlToImage}` %>)'>
+                <span>
+                  <%= category[0] %>
+                </span>
+              </div>
+              <p>
+                <%= title %>
+              </p>
             </div>
-            <div id="right_middle">
-                <section id="digital_games">
-                    <span class="header">DIGITAL SKILL GAMES</span>
-                </section>
-                <section id="popular_trends">
-                    <span class="header">POPULAR TRENDS</span>
-                </section>
-            </div>
+
+            <% }) %>
+          </div>
         </section>
+        <section id="popular_trends">
+          <span class="header">POPULAR TRENDS</span>
+          <div>
+            <div style="background-image: url(<%= `${popularTrends[0].urlToImage}` %>)">
+              <span>
+                <%= popularTrends[0].category[0] %>
+              </span>
+            </div>
+            <div>
+              <p>
+                <%= popularTrends[0].title %>
+              </p>
+              <p>
+                <%= getFormattedDate(popularTrends[0].publishedAt) %>
+              </p>
+              <p>
+                <%= popularTrends[0].description %>
+              </p>
+            </div>
+          </div>
+          <div>
+            <% for(let i=1; i < 3 ; i++) { %>
+            <div>
+              <div style="background-image: url(<%= `${popularTrends[i].urlToImage}` %>)">
+                <span>
+                  <%= popularTrends[i].category[0] %>
+                </span>
+              </div>
+              <div>
+                <p>
+                  <%= popularTrends[i].title %>
+                </p>
+                <p>
+                  <%= getFormattedDate(popularTrends[i].publishedAt) %>
+                </p>
+              </div>
+            </div>
+            <% } %>
+          </div>
+      </div>
+    </section>
+  </div>
+  </section>
 
 
-        <span id="goto_top_btn"><img src="./images/up-arrow.png" width="20px"></span>
+  <span id="goto_top_btn"><img src="./images/up-arrow.png" width="20px"></span>
 
-        <!-- Footer -->
-        <%- include('partials/footer') %>
+  <!-- Footer -->
+  <%- include('partials/footer') %>
 
-    </div>
+  <script>
+    function setDate() {
+      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-    <script>
+      let date = new Date();
 
-        function setDate() {
-            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      let currentDate = days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
 
-            let date = new Date();
+      document.getElementById("todays_date").textContent = currentDate;
+    }
 
-            let currentDate = days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+    setDate();
 
-            document.getElementById("todays_date").textContent = currentDate;
-        }
+    // Nav script starts
+    let search_ico = document.querySelector("#nav_blog > div > div:nth-of-type(3) > svg");
+    search_ico.addEventListener("click", showSearchBox);
 
-        setDate();
+    let goto_top_btn = document.getElementById("goto_top_btn");
+    goto_top_btn.addEventListener("click", gotoTop);
 
-        // Nav script starts
-        let search_ico = document.querySelector("#nav_blog > div > div:nth-of-type(3) > svg");
-        search_ico.addEventListener("click", showSearchBox);
+    let mobile_search = document.getElementById("mobile_search");
+    mobile_search.addEventListener("click", showMobileSearch);
 
-        let goto_top_btn = document.getElementById("goto_top_btn");
-        goto_top_btn.addEventListener("click", gotoTop);
+    function showMobileSearch() {
+      document.getElementById("mobile_search_modal").style.display = "block";
+    }
 
-        let mobile_search = document.getElementById("mobile_search");
-        mobile_search.addEventListener("click", showMobileSearch);
+    let mobile_search_close = document.getElementById("mobile_search_close");
+    mobile_search_close.addEventListener("click", closeMobileSearch);
 
-        function showMobileSearch() {
-            document.getElementById("mobile_search_modal").style.display = "block";
-        }
+    function closeMobileSearch() {
+      document.getElementById("mobile_search_modal").style.display = "none";
+    }
 
-        let mobile_search_close = document.getElementById("mobile_search_close");
-        mobile_search_close.addEventListener("click", closeMobileSearch);
+    let mobile_hamburger = document.getElementById("mobile_hamburger");
+    mobile_hamburger.addEventListener("click", showMobileNavOptions);
 
-        function closeMobileSearch() {
-            document.getElementById("mobile_search_modal").style.display = "none";
-        }
+    function showMobileNavOptions() {
+      document.getElementById("mobile_nav_options").style.display = "block";
+    }
 
-        let mobile_hamburger = document.getElementById("mobile_hamburger");
-        mobile_hamburger.addEventListener("click", showMobileNavOptions);
+    let mobile_nav_close = document.querySelector("#close_nav_options");
+    close_nav_options.addEventListener("click", closeMobileNavOptions);
 
-        function showMobileNavOptions() {
-            document.getElementById("mobile_nav_options").style.display = "block";
-        }
+    function closeMobileNavOptions() {
+      document.getElementById("mobile_nav_options").style.display = "none";
+    }
 
-        let mobile_nav_close = document.querySelector("#close_nav_options");
-        close_nav_options.addEventListener("click", closeMobileNavOptions);
+    function setMobileOptionDrop() {
+      let options = document.querySelectorAll("#mobile_options_content > ul > li");
 
-        function closeMobileNavOptions() {
-            document.getElementById("mobile_nav_options").style.display = "none";
-        }
+      // console.log(options);
 
-        function setMobileOptionDrop() {
-            let options = document.querySelectorAll("#mobile_options_content > ul > li");
-
-            // console.log(options);
-
-            options.forEach(e => {
-                let div = e.querySelector("div:nth-of-type(2)");
-                let arrow = e.querySelector("div:nth-of-type(1) > img");
-                if (div !== null) {
-                    div.style.display = "none";
-                    e.addEventListener("click", () => {
-                        if (div.style.display == "none") {
-                            div.style.display = "block";
-                            arrow.src = "./images/down-white-arrow.png";
-                        } else {
-                            div.style.display = "none";
-                            arrow.src = "./images/right-arrow.png";
-                        }
-                    });
-                }
-            })
-        }
-
-        setMobileOptionDrop();
-
-
-        function showSearchBox() {
-            let search_box = document.getElementById("search_box");
-
-            search_box.style.display = "block";
-
-
-            let search_input = document.getElementById("search_input");
-
-            search_input.focus();
-
-            search_input.onblur = () => {
-                search_box.style.opacity = "0";
-                search_box.style.transform = "translateY(30px)";
-                setTimeout(() => {
-                    search_box.style.display = "none";
-                    search_box.style.opacity = "1";
-                    search_box.style.transform = "none";
-                }, 200);
+      options.forEach(e => {
+        let div = e.querySelector("div:nth-of-type(2)");
+        let arrow = e.querySelector("div:nth-of-type(1) > img");
+        if (div !== null) {
+          div.style.display = "none";
+          e.addEventListener("click", () => {
+            if (div.style.display == "none") {
+              div.style.display = "block";
+              arrow.src = "./images/down-white-arrow.png";
+            } else {
+              div.style.display = "none";
+              arrow.src = "./images/right-arrow.png";
             }
-
+          });
         }
+      })
+    }
+
+    setMobileOptionDrop();
+
+
+    function showSearchBox() {
+      let search_box = document.getElementById("search_box");
+
+      search_box.style.display = "block";
+
+
+      let search_input = document.getElementById("search_input");
+
+      search_input.focus();
+
+      search_input.onblur = () => {
+        search_box.style.opacity = "0";
+        search_box.style.transform = "translateY(30px)";
+        setTimeout(() => {
+          search_box.style.display = "none";
+          search_box.style.opacity = "1";
+          search_box.style.transform = "none";
+        }, 200);
+      }
+
+    }
+
+    function gotoTop() {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    let changed = false;
+    window.onscroll = () => {
+      let nav = document.getElementById("nav_blog");
+      let top_btn = document.getElementById("goto_top_btn");
+      if (window.scrollY > nav.offsetHeight && !changed) {
+        nav.classList = "nav_scrolled";
+        changed = true;
+        top_btn.style.display = "flex";
+      } else if (window.scrollY <= nav.offsetHeight) {
+        changed = false;
+        nav.classList.remove("nav_scrolled");
+        top_btn.style.display = "none";
+      }
+    }
+
+    // Nav script ends
+
+    async function getArticleData(url) {
+      try {
+        let res = await fetch(url);
+        let data = await res.json();
+        return data;
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-        function gotoTop() {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        let changed = false;
-        window.onscroll = () => {
-            let nav = document.getElementById("nav_blog");
-            let top_btn = document.getElementById("goto_top_btn");
-            if (window.scrollY > nav.offsetHeight && !changed) {
-                nav.classList = "nav_scrolled";
-                changed = true;
-                top_btn.style.display = "flex";
-            } else if (window.scrollY <= nav.offsetHeight) {
-                changed = false;
-                nav.classList.remove("nav_scrolled");
-                top_btn.style.display = "none";
-            }
-        }
-
-        // Nav script ends
-
-
-        let trendingItems = ["Must-Watch Movies for Card Game Lovers", "IND vs AFG, T20 World Cup 2021 – Fantasy Preview and Top Picks", "NZ vs SCO, T20 World Cup 2021 – Fantasy Preview and Top Picks"];
-
-        let games = [
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2020/09/IPL-fantasy-cricket-strategy.png.webp",
-                title: "IPL Fantasy Cricket Strategies"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2020/09/How-does-IPL-fantasy-League-work-Post.png.webp",
-                title: "How does IPL fantasy League work?"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/09/sports-games.png.webp",
-                title: "Top 20 Multiplayer Sports Games in 2021"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/09/best-brain-games-2-1.png.webp",
-                title: "The Best Brain Games to Play on Android Devices"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/onur-binay-2M6qt9fzRBw-unsplash.png.webp",
-                title: "A Deep Dive Into The Benefits Of Playing Games Online"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/Hypercasual-gaming.png.webp",
-                title: "Popular Hyper Casual Games for a Fast-Paced Gameplay"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/MPL-Quiz.png.webp",
-                title: "How Trivia Games Can Be Both Fun and Informative"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/3-2.png.webp",
-                title: "How the pandemic has pushed casual gaming worldwide"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/09/Game-night_30-best-board-games.png.webp",
-                title: "Best Board Games to Play Online"
-            },
-            {
-                imgUrl: "https://www.mpl.live/blog/wp-content/webp-express/webp-images/uploads/2021/10/free-online-games.png.webp",
-                title: "20 Free Online Games for Adults to Play Against Live Players"
-            }
-        ]
-
-        function setTrendingNow() {
-            let counter = 0;
-            let trending = document.querySelector("#trending_container > span:nth-of-type(2)");
-            trending.textContent = trendingItems[counter];
-            trending.style.transition = "opacity 500ms ease, margin-left 500ms ease";
-            setTimeout(() => {
-                trending.style.opacity = 0;
-                trending.style.marginLeft = "0.2rem";
-            }, 3700);
-            setInterval(() => {
-                setTimeout(() => {
-                    trending.style.opacity = 1;
-                    trending.style.marginLeft = "2rem";
-                }, 200);
-                setTimeout(() => {
-                    trending.style.opacity = 0;
-                    trending.style.marginLeft = "0.2rem";
-                }, 3700);
-
-                counter++;
-                trending.textContent = trendingItems[(counter % trendingItems.length)];
-            }, 4000);
-        }
-        setTrendingNow();
-
-
-        async function getArticleData(url){
-            try{
-                let res = await fetch(url);
-                let data = await res.json();
-                // console.log(data)
-                return data;
-            } catch (error) {
-                console.log(error);
-            }
-        }
 
-        async function setHighlightedNews() {
+    let trendingItems;
+    async function setTrendingNow() {
+      trendingItems = (await getArticleData("http://localhost:3000/articles?limit=5&category=Cricket")).map(e => e.title);
 
-            let data = await getArticleData('http://localhost:3000/articles?latest=true&category=Fantasy&limit=4');
+      let counter = 0;
+      let trending = document.querySelector("#trending_container > span:nth-of-type(2)");
+      trending.textContent = trendingItems[counter];
+      trending.style.transition = "opacity 500ms ease, margin-left 500ms ease";
+      setTimeout(() => {
+        trending.style.opacity = 0;
+        trending.style.marginLeft = "0.2rem";
+      }, 3700);
+      setInterval(() => {
+        setTimeout(() => {
+          trending.style.opacity = 1;
+          trending.style.marginLeft = "2rem";
+        }, 200);
+        setTimeout(() => {
+          trending.style.opacity = 0;
+          trending.style.marginLeft = "0.2rem";
+        }, 3700);
 
-            // console.log(data);
+        counter++;
+        trending.textContent = trendingItems[(counter % trendingItems.length)];
+      }, 4000);
+    }
+    setTrendingNow();
 
-            let container = document.getElementById("highlighted_news");
+    async function getQueryResult(query) {
+      try {
+        let res = await fetch(`http://localhost:3000/articles/search?query=${query}`);
 
-            let content = document.createElement("div");
+        let data = await res.json();
+        return data;
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-            // console.log(data)
+    let searchTimeout;
 
-            for (let i = 0; i < 4; i++) {
+    function searchDebounce(src, target, items) {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        showSearchMobResult(src, target, items);
+      }, 500);
+    }
 
-                let div = document.createElement("div");
+    document.querySelector("#mobile_search_modal > input").addEventListener("input", () => {
+      searchDebounce("#mobile_search_modal > input", "search_modal_result", 4)
+    });
 
-                let div1 = document.createElement("div");
-                div1.className = "highlighted_news_content";
+    document.querySelector("#search_input").addEventListener("input", () => {
+      searchDebounce("#search_input", "search_result", 6)
+    });
 
-                let span = document.createElement("span");
-                span.textContent = "Cricket";
+    async function showSearchMobResult(src, target, items) {
 
-                let p = document.createElement("p");
-                p.textContent = data[i].title;
 
-                div1.append(span, p);
+      
+      let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      
 
-                let img_div = document.createElement("div");
 
-                img_div.style.backgroundImage = `url(${data[i].urlToImage})`;
 
-                div.append(div1, img_div);
+      let query = document.querySelector(src);
 
-                if (i == 0) {
-                    container.append(div);
-                } else {
-                    content.append(div);
-                }
-            }
-            container.append(content);
-        }
-        setHighlightedNews();
+      let container = document.getElementById(target);
 
+      container.innerHTML = "";
 
-        async function setMatchPrediction() {
-            let data = await getArticleData('http://localhost:3000/articles?latest=true&category=Fantasy Prediction&limit=5');
+      if (query.value.length == 0) {
+        return;
+      }
 
-            let container = document.getElementById("match_prediction");
+      let result = await getQueryResult(query.value);
 
-            let content = document.createElement("div");
+      if (result.length == 0) {
+        return;
+      }
 
-            for (let i = 0; i < 5; i++) {
-                let div = document.createElement("div");
+      for (let i = 0; i < items; i++) {
+        let div = document.createElement("div");
 
-                let imgDiv = document.createElement("div");
+        let imgDiv = document.createElement("div");
 
-                let img = document.createElement("img");
-                img.src = data[i].urlToImage;
+        let img = document.createElement("img");
+        img.src = result[i].urlToImage;
 
-                imgDiv.append(img);
+        imgDiv.appendChild(img);
 
-                let div2 = document.createElement("div");
+        let detailsDiv = document.createElement("div");
 
-                let title = document.createElement("p");
-                title.textContent = data[i].title;
+        let title = document.createElement("p");
+        title.textContent = result[i].title;
 
-                let date = document.createElement("p");
-                date.textContent = data[i].publishedAt;
 
-                div2.append(title, date);
+        let storedDate = new Date(result[i].publishedAt);
 
-                if (i == 0) {
-                    let description = document.createElement("p");
-                    description.textContent = data[i].description;
+        let date = document.createElement("p");
+        date.textContent = `${monthNames[storedDate.getMonth()]} ${storedDate.getDate()}, ${storedDate.getFullYear()}`;
 
-                    div2.append(description);
-                }
+        detailsDiv.append(title, date);
 
-                div.append(imgDiv, div2);
+        div.append(imgDiv, detailsDiv);
 
-                content.append(div);
+        container.append(div);
+      }
 
-            }
+    }
 
-            container.append(content);
 
-        }
-        setMatchPrediction()
 
-        async function setLatestPosts() {
-            let data = await getArticleData('http://localhost:3000/articles?latest=true&limit=15')
+    // Signing
 
-            // console.log(data)
+    document.getElementById("login_btn").addEventListener("click", () => {
+      showOverlay('login')
+    });
+    document.getElementById("join_btn").addEventListener("click", () => {
+      showOverlay('signup')
+    });
+    document.getElementById("login_overlay_close_btn").addEventListener("click", closeOverlay);
+    document.getElementById("signup_overlay_close_btn").addEventListener("click", closeOverlay);
 
-            let container = document.getElementById("latest_posts");
 
-            let content = document.createElement("div");
+    function showOverlay(t) {
+      let overlay = document.getElementById("overlay");
+      overlay.style.display = "block";
+      if (t == "signup") {
+        document.getElementById("overlay_signup").style.display = "block";
+        document.getElementById("overlay_login").style.display = "none";
+      } else if (t == "login") {
+        document.getElementById("overlay_signup").style.display = "none";
+        document.getElementById("overlay_login").style.display = "block";
+      }
+      overlay.onscroll
+    }
 
-            for (let i = 0; i < 15; i++) {
-                let div = document.createElement("div");
+    function setSignOverlay() {
+      document.getElementById("overlay_background").addEventListener("click", () => {
+        closeOverlay()
+      });
 
-                let imgDiv = document.createElement("div");
+      document.getElementById("signup_form").addEventListener("submit", () => {
+        SignUp(event)
+      });
 
-                let img = document.createElement("img");
-                img.src = data[i].urlToImage;
+      document.getElementById("login_form").addEventListener("submit", () => {
+        Login(event)
+      });
+    }
 
-                let news = document.createElement("span");
-                news.textContent = "Sports";
+    setSignOverlay();
 
-                imgDiv.append(img, news);
+    async function SignUp(e) {
+      e.preventDefault();
 
-                let title = document.createElement("p");
-                title.textContent = data[i].title;
+      let form = document.getElementById("signup_form");
 
-                div.append(imgDiv, title);
+      let details = {
+        name: form.signup_name.value,
+        email: form.signup_mail.value,
+        password: form.signup_pass.value,
+        username: form.signup_username.value,
+        mobile: form.signup_mobile.value,
+        description: form.signup_description.value,
+      }
 
-                content.append(div);
-            }
+      // console.log(details);
 
-            container.append(content);
+      details = JSON.stringify(details);
 
-        }
-        setLatestPosts();
-
-
-        async function setDigitalGames() {
-
-            let data = await getArticleData('http://localhost:3000/articles?latest=true&category=Games&limit=8');
-
-            let digitalGames = document.getElementById("digital_games");
-
-            let content = document.createElement("div");
-
-            data.forEach(({ urlToImage, title }) => {
-                let div = document.createElement("div");
-
-                let imgDiv = document.createElement("div");
-                imgDiv.style.backgroundImage = `url(${urlToImage})`;
-
-                let tag = document.createElement("span");
-                tag.textContent = "Games";
-                imgDiv.append(tag);
-
-                let name = document.createElement("p");
-                name.textContent = title;
-
-                div.append(imgDiv, name);
-
-                content.append(div);
-
-            });
-
-            digitalGames.append(content);
-        }
-
-        setDigitalGames();
-
-        async function setPopularTrends() {
-            let data = await getArticleData('http://localhost:3000/articles?category=MPL Announcements&limit=15');
-
-            let container = document.getElementById("popular_trends");
-
-            let content = document.createElement("div");
-
-            for (let i = 0; i < 3; i++) {
-                let div = document.createElement("div");
-
-                let imgDiv = document.createElement("div");
-                imgDiv.style.backgroundImage = `url(${data[i].urlToImage})`;
-
-                let tag = document.createElement("span");
-                tag.textContent = "Games";
-                imgDiv.append(tag);
-
-                let div2 = document.createElement("div");
-
-                let title = document.createElement("p");
-                title.textContent = data[i].title;
-
-                let date = document.createElement("p");
-                date.textContent = data[i].publishedAt;
-
-                div2.append(title, date);
-
-                div.append(imgDiv, div2);
-
-                if (i == 0) {
-                    let p = document.createElement("p");
-                    p.textContent = data[i].description;
-                    div2.append(p)
-                    container.append(div);
-                } else {
-                    content.append(div);
-                }
-            }
-
-            container.append(content);
-        }
-        setPopularTrends();
-
-
-
-        async function getQueryResult(query) {
-            try {
-                let res = await fetch(`https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=6e090dfbade046388eb6c0239e50db8b`);
-
-                let data = await res.json();
-                // console.log(data)
-                return data;
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        getQueryResult("cricket");
-
-        let searchTimeout;
-        function searchDebounce(src, target, items) {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                showSearchMobResult(src, target, items);
-            }, 500);
-        }
-
-        document.querySelector("#mobile_search_modal > input").addEventListener("input", () => {
-            searchDebounce("#mobile_search_modal > input", "search_modal_result", 4)
+      try {
+        let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/register", {
+          method: "POST",
+          body: details,
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
 
-        document.querySelector("#search_input").addEventListener("input", () => {
-            searchDebounce("#search_input", "search_result", 6)
+        let data = await res.json();
+
+        if (data.error) {
+          showSignUpFailed();
+        } else {
+          showSignUpSuccessful();
+        }
+
+      } catch (e) {
+        // console.log(e);
+      }
+
+    }
+
+    async function Login(e) {
+      e.preventDefault();
+
+      document.getElementById("login_failed").style.display = "none";
+
+      let form = document.getElementById("login_form");
+
+      let details = {
+        password: form.login_pass.value,
+        username: form.login_username.value,
+      }
+
+      console.log(details);
+
+      details = JSON.stringify(details);
+
+      try {
+        let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
+          method: "POST",
+          body: details,
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
 
-        async function showSearchMobResult(src, target, items) {
-            let query = document.querySelector(src);
+        let data = await res.json();
 
-            let container = document.getElementById(target);
+        // console.log(data);
 
-            container.innerHTML = "";
-
-            if (query.value.length == 0) {
-                return;
-            }
-
-            let result = await getQueryResult(query.value);
-
-            result = result.articles;
-
-
-
-            if (result.length == 0) {
-                return;
-            }
-
-            for (let i = 0; i < items; i++) {
-                let div = document.createElement("div");
-
-                let imgDiv = document.createElement("div");
-
-                let img = document.createElement("img");
-                img.src = result[i].urlToImage;
-
-                imgDiv.appendChild(img);
-
-                let detailsDiv = document.createElement("div");
-
-                let title = document.createElement("p");
-                title.textContent = result[i].title;
-
-                let date = document.createElement("p");
-                date.textContent = result[i].publishedAt;
-
-                detailsDiv.append(title, date);
-
-                div.append(imgDiv, detailsDiv);
-
-                container.append(div);
-            }
-
+        if (data.error) {
+          showLoginFailed();
+        } else {
+          fetchUserData(form.login_username.value, data.token);
         }
 
+      } catch (e) {
+        // console.log(e);
+      }
 
+    }
 
-        // Signing
+    function closeOverlay() {
+      document.getElementById("overlay").style.display = "none";
+    }
 
-        document.getElementById("login_btn").addEventListener("click", () => { showOverlay('login') });
-        document.getElementById("join_btn").addEventListener("click", () => { showOverlay('signup') });
-        document.getElementById("login_overlay_close_btn").addEventListener("click", closeOverlay);
-        document.getElementById("signup_overlay_close_btn").addEventListener("click", closeOverlay);
+    function showSignUpFailed() {
+      // alert("failed");
+      document.getElementById("signup_failed").style.display = "block";
+      document.getElementById("signup_success").style.display = "none";
+    }
 
+    function showSignUpSuccessful() {
+      // alert("success");
+      document.getElementById("signup_failed").style.display = "none";
+      document.getElementById("signup_success").style.display = "block";
+      setTimeout(() => {
+        closeOverlay()
+      }, 500);
+    }
 
-        function showOverlay(t) {
-            let overlay = document.getElementById("overlay");
-            overlay.style.display = "block";
-            if (t == "signup") {
-                document.getElementById("overlay_signup").style.display = "block";
-                document.getElementById("overlay_login").style.display = "none";
-            } else if (t == "login") {
-                document.getElementById("overlay_signup").style.display = "none";
-                document.getElementById("overlay_login").style.display = "block";
-            }
-            overlay.onscroll
-        }
+    async function fetchUserData(username, token) {
+      let res = await fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`, {
+        headers: {
+          'Content-Type': 'application/json',
 
-        function setSignOverlay() {
-            document.getElementById("overlay_background").addEventListener("click", () => { closeOverlay() });
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-            document.getElementById("signup_form").addEventListener("submit", () => { SignUp(event) });
+      let data = await res.json();
 
-            document.getElementById("login_form").addEventListener("submit", () => { Login(event) });
-        }
+      // console.log(data);
 
-        setSignOverlay();
+      showLoggedUser(data);
+    }
 
-        async function SignUp(e) {
-            e.preventDefault();
+    function showLoginFailed() {
+      document.getElementById("login_failed").style.display = "block";
+    }
 
-            let form = document.getElementById("signup_form");
+    function showLoggedUser(data) {
+      let nav_user = document.getElementById("nav_user");
+      nav_user.querySelector("#logged_username").innerText = data.username;
+      nav_user.style.display = "flex";
 
-            let details = {
-                name: form.signup_name.value,
-                email: form.signup_mail.value,
-                password: form.signup_pass.value,
-                username: form.signup_username.value,
-                mobile: form.signup_mobile.value,
-                description: form.signup_description.value,
-            }
+      document.getElementById("login_option").style.display = "none";
 
-            // console.log(details);
-
-            details = JSON.stringify(details);
-
-            try {
-                let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/register", {
-                    method: "POST",
-                    body: details,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                let data = await res.json();
-
-                if (data.error) {
-                    showSignUpFailed();
-                } else {
-                    showSignUpSuccessful();
-                }
-
-            } catch (e) {
-                // console.log(e);
-            }
-
-        }
-
-        async function Login(e) {
-            e.preventDefault();
-
-            document.getElementById("login_failed").style.display = "none";
-
-            let form = document.getElementById("login_form");
-
-            let details = {
-                password: form.login_pass.value,
-                username: form.login_username.value,
-            }
-
-            console.log(details);
-
-            details = JSON.stringify(details);
-
-            try {
-                let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
-                    method: "POST",
-                    body: details,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                let data = await res.json();
-
-                // console.log(data);
-
-                if (data.error) {
-                    showLoginFailed();
-                } else {
-                    fetchUserData(form.login_username.value, data.token);
-                }
-
-            } catch (e) {
-                // console.log(e);
-            }
-
-        }
-
-        function closeOverlay() {
-            document.getElementById("overlay").style.display = "none";
-        }
-
-        function showSignUpFailed() {
-            // alert("failed");
-            document.getElementById("signup_failed").style.display = "block";
-            document.getElementById("signup_success").style.display = "none";
-        }
-
-        function showSignUpSuccessful() {
-            // alert("success");
-            document.getElementById("signup_failed").style.display = "none";
-            document.getElementById("signup_success").style.display = "block";
-            setTimeout(() => { closeOverlay() }, 500);
-        }
-
-        async function fetchUserData(username, token) {
-            let res = await fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-
-            let data = await res.json();
-
-            // console.log(data);
-
-            showLoggedUser(data);
-        }
-
-        function showLoginFailed() {
-            document.getElementById("login_failed").style.display = "block";
-        }
-
-        function showLoggedUser(data) {
-            let nav_user = document.getElementById("nav_user");
-            nav_user.querySelector("#logged_username").innerText = data.username;
-            nav_user.style.display = "flex";
-
-            document.getElementById("login_option").style.display = "none";
-
-            closeOverlay();
-        }
-
-
-    </script>
+      closeOverlay();
+    }
+  </script>
 
 
 </body>

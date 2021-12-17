@@ -56,4 +56,27 @@ router.post('/', upload.single('urlToImage'), async(req, res) => {
 });
 
 
+router.get('/search', upload.single('urlToImage'), async(req, res) => { 
+
+    const query = req.query.query;
+    const regex = new RegExp(`.*${query}.*`);
+
+    try{
+        const articles = await Article.find({
+            $or: [
+                { title: { $regex: regex, $options: "i" } },
+                { content: { $regex: regex, $options: "i" } },
+                { description: { $regex: regex, $options: "i" } },
+                { category: { $regex: regex, $options: "i" } },
+              ],
+        }).limit(6).lean().exec();
+        return res.status(201).send(articles);
+
+    } catch(err){
+        return res.status(500).send({message: err.message, status: 'failed'});
+    }
+
+});
+
+
 module.exports = router;

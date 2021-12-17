@@ -353,7 +353,7 @@
 
     async function getQueryResult(query) {
       try {
-        let res = await fetch(`http://localhost:3000/articles/search?query=${query}`);
+        let res = await fetch(`https://mplclone.herokuapp.com/articles/search?query=${query}`);
 
         let data = await res.json();
         return data;

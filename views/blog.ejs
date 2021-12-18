@@ -380,13 +380,7 @@
     });
 
     async function showSearchMobResult(src, target, items) {
-
-
-
       let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-
-
 
       let query = document.querySelector(src);
 
@@ -406,6 +400,9 @@
 
       for (let i = 0; i < items; i++) {
         let div = document.createElement("div");
+        div.onclick = () => {
+          window.location.href = `/news/${result[i]._id}` ;
+        }
 
         let imgDiv = document.createElement("div");
 

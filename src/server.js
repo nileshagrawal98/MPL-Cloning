@@ -8,8 +8,6 @@ require('dotenv').config();
 app.use(express.json());
 app.set('view engine', 'ejs');
 
-const news=require("./controller/newscrud")
-app.use("/news",news)
 
 const pageController = require('./controller/page.controller');
 app.use('/dropdown', pageController);
@@ -22,6 +20,7 @@ const Article = require('./models/article.model');
 app.use('/articles', articleController);
 app.use(express.static(__dirname + '/public'));
 app.use(path.join(__dirname + '/uploads'), express.static(__dirname + '/uploads'));
+
 const news=require("./controller/newscrud")
 app.use("/news",news)
 

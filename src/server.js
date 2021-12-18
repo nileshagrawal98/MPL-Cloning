@@ -22,6 +22,8 @@ const Article = require('./models/article.model');
 app.use('/articles', articleController);
 app.use(express.static(__dirname + '/public'));
 app.use(path.join(__dirname + '/uploads'), express.static(__dirname + '/uploads'));
+const news=require("./controller/newscrud")
+app.use("/news",news)
 
 app.get('/blog', async (req, res) => {
     let highlighted = await Article.find({category: "Fantasy"}).sort({"publishedAt": -1}).limit(4).lean().exec();

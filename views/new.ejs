@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,185 +11,85 @@
   <link rel="stylesheet" href="/css/nav_blog.css" type='text/css'>
   <link rel="stylesheet" href="/css/signing.css" type='text/css'>
   <link rel="stylesheet" href="/css/footer_blog.css" type='text/css'>
+  <link rel="stylesheet" href="/css/news.css" type='text/css'>
 
-
-
-  <title>Home | Mpl Blog</title>
 </head>
-
 <body>
-
-  <% function getFormattedDate(d) { %>
-  <%    let date = new Date(d); %>
-  <%    let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
-  <%    return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`; %>
-  <% } %>
-
-  <div>
+   
 
     <%- include('partials/navbar') %>
     <%- include('partials/signing') %>
+    
+      
+        <div id="news">
+            
+            <% news.forEach(function (news) {%>
+                
+                <div id="left" >
+                   
+                    <p id="black"><%=news.category%></p>
+                    <h1><%=news.title%></h1>
+                   <img src=<%=news.urlToImage%>>
+                  
+                   <p><%=news.description%></p>
+                   <h2>How to purchase the south african T20 League Playoff Season Ticket?</h2>
+                   
+                   <p>Purchasing a ticket for the Playoffs of the Lanka T20 League is fairly simple and seamless. You just have to follow the five steps mentioned below and you’re set to participate in the grand contests for FREE. </p>
+                <p>Step 1: First you have to Install the MPL app from a browser and open the homepage of the app. There, you will get a banner that reads “Lanka T20 League Season Ticket Sale”. Click on that banner to proceed further. Remember the app isn’t available on Play Store. </p>
+            <p>Step 2: Here, you can see an option to buy “Lanka T20 League Playoff Season Ticket”. Click on the Buy option at the right side of the ticket. The ticket will be available at a price of Rs. 9. </p>    
+            <p>Step 3: You will now be redirected to a page where you can go through the terms and conditions of the Season Ticket. There you can see the matches that this particular ticket is valid for. After reading all of the terms and conditions carefully, you can move forward by clicking the “Buy for ₹9” option. </p>
+            <p>Step 4: The app will now redirect you to the “Add Deposit” page. This will show you the current balance available in your MPL wallet. If you have sufficient balance, you can go ahead and use the same for buying the Season Ticket for the Lanka T20 League at ₹9 only. However, if you do not have a sufficient balance, you will need to top up your MPL wallet first. Click the “Proceed to add cash” button, after which you can refill your wallet with as much money as you wish. You will get a variety of transaction options such as Debit or Credit Cards, Paytm, Google Pay, UPI payment or Net banking to add cash into your wallet. All payments done on the MPL app are 100% secure and legal. </p>
+            <p>Step 5: The transaction will be completed once the cash is transferred to your wallet. You can now find your Season Ticket in the wallet, in the Tickets section. </p>
+                <h2>On which matches will the season ticket be applicable?</h2>
+                <p>The Lanka T20 League Playoff Season Ticket will be applicable across four matches to be played from December 19 to December 23. Below is the list of matches on which the Lanka T20 League Weekday Season Ticket will be applicable:</p>
+                <p> Eliminator – December 19th, 3:00 PM IST</p>
+                    
+                <p>  Qualifier 1 – December 19th, 7:30 PM IST </p>
+                    
+                <p> Qualifier 2 – December 21st, 7:30 PM IST </p>
+                    
+                <p> Final – December 23rd, 7:30 PM IST </p>
 
-    <section class="container" id="top_section">
-      <div id="trending_container">
-        <span>
-          TRENDING NOW
-        </span>
-        <span></span>
-      </div>
-      <div id="highlighted_news">
-        <div>
-          <div class="highlighted_news_content" onclick="window.location.href='<%= `news/${matchPredictions[0]._id}` %>' ">
-            <span>
-              <%= highlighted[0].category[0] %>
-            </span>
-            <p>
-              <%= highlighted[0].title %>
-            </p>
-          </div>
-          <!-- <% let url = `${highlighted[0].urlToImage}` %> -->
-          <div style="background-image: url(<%= `${highlighted[0].urlToImage}` %>)"></div>
+
+
+                <h2>How to use the Lanka T20 League Season Ticket?</h2>
+<p>When you purchase the Lanka T20 League Playoff Season Ticket, you can use it on each of the 4 matches of the Lanka T20 League mentioned above . Select the match in which you want to participate and create a fantasy team. You can get one FREE entry in a Grand Contest of up to Rs 20 Lakhs. Isn’t that a steal deal or what! 
+
+FAQs</p>
+<p>1) Can I buy more than one ticket?</p>
+
+<p>No, you are allowed to purchase only one season ticket per account. Once the validity of the ticket ends, you can purchase another ticket. </p>
+
+<p>2) Will I get any refunds in case I do not want to use my Season Ticket?</p>
+
+<p>There will be no refund if you do not use your Season Ticket. Once you have purchased the Season Ticket, you can not avail a refund in case of any scenario, even if one or multiple matches get abandoned or cancelled. </p>
+
+<p>3) When will the Season Ticket be activated?</p>
+
+<p>The Season Ticket of the Lanka T20 League will be activated as soon as the contests are up for the games mentioned in the Lanka T20 League Playoff Season Ticket offer.</p>
+
+<br>
+<br>       
+
+</div>
+                
+                 <% }) %>
+                
+                 
+                 
+                 
+         
+          
+            
         </div>
-        <div>
-          <% for(let i=1 ; i < 4 ; i++) { %>
-          <div>
-            <div class="highlighted_news_content" onclick="window.location.href='<%= `news/${matchPredictions[i]._id}` %>' ">
-              <span>
-                <%= highlighted[i].category[0] %>
-              </span>
-              <p>
-                <%= highlighted[i].title %>
-              </p>
-            </div>
-            <!-- <% let url = `${highlighted[0].urlToImage}` %> -->
-            <div style="background-image: url(<%= `${highlighted[i].urlToImage}` %>)"></div>
-          </div>
-          <% } %>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="container" id="middle_section">
-      <div id="left_middle">
-        <section id="match_prediction">
-          <span class="header">TODAY'S MATCH PREDICTION</span>
-          <div>
-            <% for (let i=0; i < 5 ; i++) { %>
-            <% let link = `news/${matchPredictions[i]._id}` %>
-            <div onclick="window.location.href='<%= link %>' ">
-              <div>
-                <img src="<%=matchPredictions[i].urlToImage%>">
-              </div>
-              <div>
-                <p>
-                  <%=matchPredictions[i].title%>
-                </p>
-                <p>
-                  <%=getFormattedDate(matchPredictions[i].publishedAt)%>
-                </p>
-                <% if(i==0) { %>
-                <p>
-                  <%=matchPredictions[i].description%>
-                </p>
-                <% } %>
-              </div>
-            </div>
-            <% } %>
-          </div>
-        </section>
-        <section id="latest_posts">
-          <span class="header">Latest Posts</span>
-          <div>
-            <% latestPosts.forEach(({urlToImage, category, title, _id})=> { %>
-
-            <div onclick="window.location.href='<%= `news/${_id}` %>' ">
-              <div>
-                <img src="<%= urlToImage %>">
-                <span>
-                  <%= category[0] %>
-                </span>
-              </div>
-              <p>
-                <%= title %>
-              </p>
-            </div>
-
-            <% }); %>
-          </div>
-        </section>
-      </div>
-      <div id="right_middle">
-        <section id="digital_games">
-          <span class="header">DIGITAL SKILL GAMES</span>
-          <div>
-            <% digitalGames.forEach(({urlToImage, title, category, _id})=> { %>
-
-            <div onclick="window.location.href='<%= `news/${_id}` %>' ">
-              <div style='background-image: url(<%= `${urlToImage}` %>)'>
-                <span>
-                  <%= category[0] %>
-                </span>
-              </div>
-              <p>
-                <%= title %>
-              </p>
-            </div>
-
-            <% }) %>
-          </div>
-        </section>
-        <section id="popular_trends">
-          <span class="header">POPULAR TRENDS</span>
-          <div onclick="window.location.href='<%= `news/${popularTrends[0]._id}` %>' ">
-            <div style="background-image: url(<%= `${popularTrends[0].urlToImage}` %>)">
-              <span>
-                <%= popularTrends[0].category[0] %>
-              </span>
-            </div>
-            <div>
-              <p>
-                <%= popularTrends[0].title %>
-              </p>
-              <p>
-                <%= getFormattedDate(popularTrends[0].publishedAt) %>
-              </p>
-              <p>
-                <%= popularTrends[0].description %>
-              </p>
-            </div>
-          </div>
-          <div>
-            <% for(let i=1; i < 3 ; i++) { %>
-            <div onclick="window.location.href='<%= `news/${popularTrends[i]._id}` %>' ">
-              <div style="background-image: url(<%= `${popularTrends[i].urlToImage}` %>)">
-                <span>
-                  <%= popularTrends[i].category[0] %>
-                </span>
-              </div>
-              <div>
-                <p>
-                  <%= popularTrends[i].title %>
-                </p>
-                <p>
-                  <%= getFormattedDate(popularTrends[i].publishedAt) %>
-                </p>
-              </div>
-            </div>
-            <% } %>
-          </div>
-      </div>
-    </section>
-  </div>
-  </section>
-
-
-  <span id="goto_top_btn"><img src="./images/up-arrow.png" width="20px"></span>
-
-  <!-- Footer -->
-  <%- include('partials/footer') %>
-
-  <script>
+        
+        <span id="goto_top_btn"><img src="/images/up-arrow.png" width="20px"></span>
+      
+    
+    
+    
+</body>
+<script>
     function setDate() {
       let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -323,38 +222,9 @@
     }
 
 
-    let trendingItems;
-    async function setTrendingNow() {
-      trendingItems = (await getArticleData("https://mplclone.herokuapp.com/articles?limit=5&category=Cricket")).map(e => e.title);
-
-      let counter = 0;
-      let trending = document.querySelector("#trending_container > span:nth-of-type(2)");
-      trending.textContent = trendingItems[counter];
-      trending.style.transition = "opacity 500ms ease, margin-left 500ms ease";
-      setTimeout(() => {
-        trending.style.opacity = 0;
-        trending.style.marginLeft = "0.2rem";
-      }, 3700);
-      setInterval(() => {
-        setTimeout(() => {
-          trending.style.opacity = 1;
-          trending.style.marginLeft = "2rem";
-        }, 200);
-        setTimeout(() => {
-          trending.style.opacity = 0;
-          trending.style.marginLeft = "0.2rem";
-        }, 3700);
-
-        counter++;
-        trending.textContent = trendingItems[(counter % trendingItems.length)];
-      }, 4000);
-    }
-    setTrendingNow();
-
     async function getQueryResult(query) {
       try {
         let res = await fetch(`https://mplclone.herokuapp.com/articles/search?query=${query}`);
-
         let data = await res.json();
         return data;
       } catch (error) {
@@ -382,9 +252,9 @@
     async function showSearchMobResult(src, target, items) {
 
 
-
+      
       let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
+      
 
 
 
@@ -608,8 +478,4 @@
       closeOverlay();
     }
   </script>
-
-
-</body>
-
 </html>

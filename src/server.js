@@ -8,7 +8,11 @@ require('dotenv').config();
 app.use(express.json());
 app.set('view engine', 'ejs');
 
+const news=require("./controller/newscrud")
+app.use("/news",news)
 
+const pageController = require('./controller/page.controller');
+app.use('/dropdown', pageController);
 
 app.use(favicon(path.join(__dirname,'public','images','favicon.png')));
 
@@ -29,7 +33,27 @@ app.get('/blog', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('blog');
+    res.render('index');
+});
+
+app.get('/esport', (req, res) => {
+    res.render('esport');
+});
+
+app.get('/about', (req, res) => {
+    res.render('about');
+});
+
+app.get('/faq', (req, res) => {
+    res.render('faq');
+});
+
+app.get('/help', (req, res) => {
+    res.render('help');
+});
+
+app.get('/news', (req, res) => {
+    res.render('new');
 });
 
 app.get('/article_post', (req, res) => {

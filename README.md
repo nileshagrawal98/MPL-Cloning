@@ -1,7 +1,10 @@
 # MPL_Clone
 This project is made for educational purpose only.
 
-[Medium Blog](https://medium.com/@sandeepbeherakbl/how-we-cloned-the-mpl-website-in-5-days-b447b0f81814)
+[Medium Blog](https://medium.com/@sandeepbeherakbl/how-we-cloned-the-mpl-website-with-frontend-and-backend-tech-stacks-in-5-days-1c55925c8efd)
+
+[Project Link - MPL Clone](https://mplclone.herokuapp.com/)
+
 
 ## About Us
 We are from Masai School, in the course of the fourth unit here, we learned nodejs, express and mongoDB in this unit.
@@ -22,7 +25,7 @@ Bhanu Solanki, Dheeraj, Nilesh Agrawal, Prashant Ahire, Jaswant, and Sandeep Beh
 1. Sandeep & Bhanu are responsible for the landing page and the top nav bar.
 2. Dheeraj was responsible for About, FAQ and Help page.
 3. Prashant was responsible for the MPL Esports page.
-4. Nilesh & Jaswant are responsible for the Blog page(with server-side rendering), Login/Registration page, Deploying project.
+4. Nilesh & Jaswant are responsible for the Blog page(Server-side rendering), Login/Registration page, Deploying project.
 
 ## A glimpse of the project: —
 

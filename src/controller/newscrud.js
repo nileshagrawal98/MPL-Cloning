@@ -3,6 +3,7 @@
 // });
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 
 const newsmodel= require('../models/article.model');
 const upload = require('../middlewares/upload');
@@ -21,7 +22,15 @@ router.get('/:id', async (req, res) => {
     // const latest = req.query.latest || false;
     // const category = req.query.category;
     // const limit = +req.query.limit || 25;
-    let news = await newsmodel.find({_id:req.params.id})
+
+    if(!mongoose.isValidObjectId(req.params.id)){
+        return res.status(404).render('notFound');
+    }
+
+    let news = await newsmodel.find({_id:req.params.id});
+    if(!news || news.length === 0){
+        return res.status(404).render('notFound');
+    }
     res.render("new", {news})
 });
 

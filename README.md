@@ -25,7 +25,7 @@ Bhanu Solanki, Dheeraj, Nilesh Agrawal, Prashant Ahire, Jaswant, and Sandeep Beh
 1. Sandeep & Bhanu are responsible for the landing page and the top nav bar.
 2. Dheeraj was responsible for About, FAQ and Help page.
 3. Prashant was responsible for the MPL Esports page.
-4. Nilesh & Jaswant are responsible for the Blog page(Server-side rendering), Login/Registration page, Deploying project.
+4. Nilesh & Jaswant are responsible for the Blog page, Login/Registration page, Deploying project.
 
 ## A glimpse of the project: —
 

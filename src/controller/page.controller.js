@@ -18,7 +18,7 @@ router.post("/", async(req, res) => {
 router.get("/:name", async(req, res) => {
     try {
         const page = await Page.findOne({ name: req.params.name }).lean().exec();
-        // console.log(page.banner.banner_url);
+        // console.log(page);
         return res.render("pages/all", {
             data: page,
         });
